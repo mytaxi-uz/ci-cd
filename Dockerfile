@@ -2,7 +2,7 @@ FROM docker:28.0.4
 
 COPY --from=golang:1.25.1-alpine /usr/local/go /usr/local/go
 
-RUN apk add --no-cache git ca-certificates && update-ca-certificates
+RUN apk add --no-cache git ca-certificates make && update-ca-certificates
 
 ENV GOROOT=/usr/local/go \
     GOPATH=/go \
